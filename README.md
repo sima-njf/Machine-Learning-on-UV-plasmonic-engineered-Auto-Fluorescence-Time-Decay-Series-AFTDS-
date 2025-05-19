@@ -20,13 +20,11 @@ We propose a **label-free, probe-free** classification method by combining:
 ## 📁 Files & Structure
 
 
-.
-├── rf_knn_time_independent.py       # Static spectral ML pipeline (DA, NE, DOPAC)
-├── lstm_rf_knn_time_dependent.py    # Full time-series model pipeline (AFTDS)
-├── FLI_vs_Wv.xlsx                   # Static dataset (AF vs. Wavelength)
-├── DATA_ML.zip                      # Time-series .txt files (AFTDS signals)
-├── LSTM_prepared_df.pkl             # Processed AFTDS dataset for LSTM
-├── README.md                        # Project overview
+RF-RF/time_independent.py       # Static spectral ML pipeline (DA, NE, DOPAC)
+LSTM-RF-KNN/time_dependent.py    # Full time-series model pipeline (AFTDS)
+FLI_vs_Wv.xlsx                   # Static dataset (AF vs. Wavelength)
+DATA_ML.zip                      # Time-series .txt files (AFTDS signals)
+README.md                        # Project overview
 
 
 ## 📊 Datasets
