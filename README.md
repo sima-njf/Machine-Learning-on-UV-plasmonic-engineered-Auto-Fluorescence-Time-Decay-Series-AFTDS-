@@ -1,10 +1,9 @@
 
-````markdown
+
 # Machine Learning on UV Plasmonic-Engineered Auto Fluorescence Time Decay Series (AFTDS)
 
 This repository contains the full ML pipeline for classifying monoamine neurotransmitters—dopamine (DA), norepinephrine (NE), and DOPAC—using UV plasmonic-enhanced fluorescence and time-series decay data.
 
----
 
 ## 🧪 Project Summary
 
@@ -17,11 +16,10 @@ We propose a **label-free, probe-free** classification method by combining:
   - 🌲 Random Forest
   - 👥 KNN
 
----
 
 ## 📁 Files & Structure
 
-```bash
+
 .
 ├── rf_knn_time_independent.py       # Static spectral ML pipeline (DA, NE, DOPAC)
 ├── lstm_rf_knn_time_dependent.py    # Full time-series model pipeline (AFTDS)
@@ -29,9 +27,7 @@ We propose a **label-free, probe-free** classification method by combining:
 ├── DATA_ML.zip                      # Time-series .txt files (AFTDS signals)
 ├── LSTM_prepared_df.pkl             # Processed AFTDS dataset for LSTM
 ├── README.md                        # Project overview
-````
 
----
 
 ## 📊 Datasets
 
@@ -47,7 +43,7 @@ We propose a **label-free, probe-free** classification method by combining:
 * File naming format: `*_DA_*.txt`, `*_NE_*.txt`, `*_DOPAC_*.txt`
 * Each file contains 2 columns of signal readings across timesteps
 
----
+
 
 ## 🚀 How to Run
 
@@ -106,6 +102,6 @@ MIT License (or as specified)
 
 ---
 
-```
+
 
 
