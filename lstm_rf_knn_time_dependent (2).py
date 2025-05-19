@@ -144,7 +144,7 @@ def run_lstm_model(X, y):
 
 # === Entry Point ===
 if __name__ == '__main__':
-    raw_data = extract_and_parse('Data_Sima.zip', 'unzipped')
+    raw_data = extract_and_parse('Data_ML.zip', 'unzipped')
     X_clf, y_clf = prepare_classical(raw_data)
     run_classical_models(X_clf, y_clf)
 
