@@ -1,8 +1,3 @@
-Thanks! Based on your update, here’s a revised version of the `README.md` to reflect the correct datasets:
-
----
-
-### 📘 Updated `README.md`
 
 ````markdown
 # Machine Learning on UV Plasmonic-Engineered Auto Fluorescence Time Decay Series (AFTDS)
