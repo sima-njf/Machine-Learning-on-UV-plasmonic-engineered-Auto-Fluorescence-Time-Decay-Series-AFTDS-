@@ -108,11 +108,4 @@ MIT License (or as specified)
 
 ```
 
----
 
-Would you like me to:
-- Upload this as a `README.md` file to download?
-- Or insert it directly into your GitHub repo structure with commit instructions?
-
-Let me know!
-```
