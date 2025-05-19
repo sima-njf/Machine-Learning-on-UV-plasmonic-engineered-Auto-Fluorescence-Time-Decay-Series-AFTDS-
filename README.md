@@ -1,135 +1,123 @@
-# Machine-Learning-on-UV-plasmonic-engineered-Auto-Fluorescence-Time-Decay-Series-AFTDS-
-
-Based on the two code files you provided (`rf_knn_time_independent.py`, `lstm_rf_knn_time_dependent.py`) and the content of your paper, here's a clean, professional `README.md` you can use for your GitHub repository:
+Thanks! Based on your update, here’s a revised version of the `README.md` to reflect the correct datasets:
 
 ---
 
-### 📘 `README.md`
+### 📘 Updated `README.md`
 
 ````markdown
 # Machine Learning on UV Plasmonic-Engineered Auto Fluorescence Time Decay Series (AFTDS)
 
-This repository contains the full pipeline for classifying monoamine neurotransmitters—dopamine (DA), norepinephrine (NE), and DOPAC—using UV plasmonic-enhanced fluorescence time-series data and machine learning models including LSTM, KNN, and Random Forest.
+This repository contains the full ML pipeline for classifying monoamine neurotransmitters—dopamine (DA), norepinephrine (NE), and DOPAC—using UV plasmonic-enhanced fluorescence and time-series decay data.
 
 ---
 
 ## 🧪 Project Summary
 
-We propose a label-free, probe-free methodology that combines:
+We propose a **label-free, probe-free** classification method by combining:
 
-- **Aluminum Concave Nanocubes (AlCNCs)**: used to amplify autofluorescence (AF) signals.
-- **AFTDS (Auto Fluorescence Time Decay Series)**: time-resolved fluorescence profiles under UV exposure.
-- **ML Algorithms**:
-  - 🧠 Long Short-Term Memory (LSTM) – for time-series modeling
-  - 🌲 Random Forest – ensemble decision trees for static data
-  - 👥 K-Nearest Neighbors (KNN) – simple baseline classifier
+- **Plasmonic Aluminum Nanocubes (AlCNCs)** to amplify UV-induced autofluorescence (AF)
+- **AFTDS (Auto Fluorescence Time Decay Series)** and static spectra
+- **Machine Learning models** including:
+  - 🧠 LSTM (for sequence modeling)
+  - 🌲 Random Forest
+  - 👥 KNN
 
 ---
 
-## 📁 Repository Structure
+## 📁 Files & Structure
 
 ```bash
 .
-├── rf_knn_time_independent.py       # ML models using static fluorescence spectra
-├── lstm_rf_knn_time_dependent.py    # Full pipeline for time-series data using AFTDS
-├── Data_Sima.zip                    # ZIP containing .txt files with AFTDS signals (add via GitHub Release)
-├── LSTM_prepared_df.pkl             # Preprocessed dataset for LSTM training
-├── README.md                        # This file
+├── rf_knn_time_independent.py       # Static spectral ML pipeline (DA, NE, DOPAC)
+├── lstm_rf_knn_time_dependent.py    # Full time-series model pipeline (AFTDS)
+├── FLI_vs_Wv.xlsx                   # Static dataset (AF vs. Wavelength)
+├── DATA_ML.zip                      # Time-series .txt files (AFTDS signals)
+├── LSTM_prepared_df.pkl             # Processed AFTDS dataset for LSTM
+├── README.md                        # Project overview
 ````
 
 ---
 
-## 🧬 Data Format
+## 📊 Datasets
 
-### For Time-Dependent (`Data_Sima.zip`)
+### 🔹 `FLI_vs_Wv.xlsx`
 
-Each `.txt` file contains two columns:
+* Static fluorescence intensity vs. wavelength
+* Columns: `Wavelength`, `DA_*`, `DOPAC_*`, `NE_*`
+* Used for classical ML (KNN, RF) with 2D vectors
 
-```
-TimeStep_1_Intensity1   Intensity2
-TimeStep_2_Intensity1   Intensity2
-...
-```
+### 🔹 `DATA_ML.zip`
 
-* Filename encodes class label: e.g. `sample_NE_001_01_0.txt`
-* These are parsed and padded into fixed-length series.
+* Contains `.txt` time-series files for each neurotransmitter
+* File naming format: `*_DA_*.txt`, `*_NE_*.txt`, `*_DOPAC_*.txt`
+* Each file contains 2 columns of signal readings across timesteps
 
 ---
 
-## 🚀 Getting Started
+## 🚀 How to Run
 
-### 1. Clone the Repository
+### 1. Clone and Install
 
 ```bash
 git clone https://github.com/yourusername/AFTDS-ML.git
 cd AFTDS-ML
+pip install -r requirements.txt
 ```
 
-### 2. Install Requirements (Colab or Local)
+### 2. Place Your Data
 
-```bash
-pip install numpy pandas scikit-learn matplotlib seaborn tensorflow
-```
-
-### 3. Upload ZIP Data
-
-Due to GitHub file size limits, download `Data_Sima.zip` from the [Releases page](https://github.com/yourusername/AFTDS-ML/releases) and place it in the root folder.
+* Put `FLI_vs_Wv.xlsx` and `DATA_ML.zip` in the root of the repo
+* If too large for Git, use [GitHub Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) or [Google Drive + gdown](https://github.com/wkentaro/gdown)
 
 ---
 
-## 📊 Models Included
+## 🧠 Models Included
 
-| Model Type       | File                            | Description                                              |
-| ---------------- | ------------------------------- | -------------------------------------------------------- |
-| Time-Independent | `rf_knn_time_independent.py`    | Uses static features from UV-AF spectra                  |
-| Time-Dependent   | `lstm_rf_knn_time_dependent.py` | Full pipeline with data parsing, padding, and LSTM model |
-
----
-
-## 🧠 Results
-
-* **LSTM on AFTDS (AlCNCs)**:
-  Accuracy: **\~89%**
-  Best at modeling time-dependence of fluorescent decay.
-
-* **KNN / RF on AFTDS**:
-  Accuracy: **\~85–87%**
-  Suitable for fast, explainable baselines.
-
-* **KNN / RF on AF-in-solution**:
-  Lower accuracy (\~60–70%) due to reduced signal quality and no temporal data.
+| Model Type                    | File                            | Description                               |
+| ----------------------------- | ------------------------------- | ----------------------------------------- |
+| KNN + RF (Static)             | `rf_knn_time_independent.py`    | Uses data from `FLI_vs_Wv.xlsx`           |
+| LSTM + RF + KNN (Time-Series) | `lstm_rf_knn_time_dependent.py` | Uses `DATA_ML.zip` or preprocessed `.pkl` |
 
 ---
 
-## 📄 Citation / Paper
+## 📈 Results
 
-If using this code or dataset, please cite the paper:
+| Model               | Accuracy | Notes                               |
+| ------------------- | -------- | ----------------------------------- |
+| **LSTM (AFTDS)**    | \~89%    | Best for sequence prediction        |
+| **KNN/RF (AFTDS)**  | \~85–87% | Efficient for structured decay data |
+| **KNN/RF (Static)** | \~60–70% | Lower due to spectral overlap       |
 
-> **A novel approach for classifying Monoamine Neurotransmitters by applying Machine Learning on UV plasmonic-engineered Auto Fluorescence Time Decay Series (AFTDS)**
+---
+
+## 📄 Citation
+
+> **A novel approach for classifying Monoamine Neurotransmitters using Machine Learning on UV plasmonic-engineered Auto Fluorescence Time Decay Series (AFTDS)**
 > Mohammad Mohammadi, Sima Najafzadehkhoei, George Vega Yon, Yunshan Wang (2025)
 
 ---
 
-## 🙏 Acknowledgments
+## 🙌 Acknowledgments
 
-* University of Utah Technology Licensing Office (TLO)
+* University of Utah TLO
 * Utah Nanofab Cleanroom
-* NSF and Micron Foundation through EMSAL
+* NSF + Micron Foundation via EMSAL
 
 ---
 
-## 🔒 License
+## 📜 License
 
-MIT License (or adapt to your preference)
+MIT License (or as specified)
+
+---
 
 ```
 
 ---
 
 Would you like me to:
-- Save this `README.md` as a downloadable file?
-- Or copy it into your repo directly?
+- Upload this as a `README.md` file to download?
+- Or insert it directly into your GitHub repo structure with commit instructions?
 
-Let me know how you'd like to use it!
+Let me know!
 ```
-
