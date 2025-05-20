@@ -41,6 +41,8 @@ We propose a **label-free, probe-free** classification method by combining:
 * File naming format: `*_DA_*.txt`, `*_NE_*.txt`, `*_DOPAC_*.txt`
 * Each file contains 2 columns of signal readings across timesteps
 
+### 🔹 `Work flow of the models`
+![image](https://github.com/user-attachments/assets/1a55c5b8-1e6a-47e7-8214-2d60570d467c)
 
 
 ## 🚀 How to Run
