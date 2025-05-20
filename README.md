@@ -66,8 +66,8 @@ pip install -r requirements.txt
 
 | Model Type                    | File                            | Description                               |
 | ----------------------------- | ------------------------------- | ----------------------------------------- |
-| KNN + RF (Static)             | `rf_knn_time_independent.py`    | Uses data from `FLI_vs_Wv.xlsx`           |
-| LSTM + RF + KNN (Time-Series) | `lstm_rf_knn_time_dependent.py` | Uses `DATA_ML.zip` or preprocessed `.pkl` |
+| KNN + RF (Static)             | `RF-KNN/time_independent.py `    | Uses data from `FLI_vs_Wv.xlsx`           |
+| LSTM + RF + KNN (Time-Series) | `LSTM-RF-KNN/time_dependent.py` | Uses `DATA_ML.zip`  |
 
 ---
 
