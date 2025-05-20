@@ -90,15 +90,13 @@ pip install -r requirements.txt
 
 ## 🙌 Acknowledgments
 
-* University of Utah TLO
+* University of Utah
 * Utah Nanofab Cleanroom
 * NSF + Micron Foundation via EMSAL
 
 ---
 
 ## 📜 License
-
-MIT License (or as specified)
 
 ---
 
