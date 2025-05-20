@@ -1,6 +1,6 @@
 
 
-# Machine Learning on UV Plasmonic-Engineered Auto Fluorescence Time Decay Series (AFTDS)
+# Machine Learning on UV Plasmonic-Engineered Auto Fluorescence Time Decay Series (AFTDS) and AF-in-Solution
 
 This repository contains the full ML pipeline for classifying monoamine neurotransmitters—dopamine (DA), norepinephrine (NE), and DOPAC—using UV plasmonic-enhanced fluorescence and time-series decay data.
 
